@@ -1,0 +1,14 @@
+{
+  "name": "PowerCoreServ",
+  "version": "0.0.0",
+  "description": "PowerCore WebApp Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "chaoi"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.13.3"
+  }
+}
