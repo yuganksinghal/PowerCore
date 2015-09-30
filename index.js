@@ -7,6 +7,6 @@ app.get('/', function(req, res) {
 
 var port = 8080;
 
-var server = app.listen(port, function(){
+var server = app.listen(process.env.port || port, function(){
     console.log('Listening on port ' + port);
 });
