@@ -4,9 +4,9 @@
   "description": "PowerCore WebApp Server",
   "main": "index.js",
   "scripts": {
-    "test": "chaoi"
+    "test": "chai"
   },
-  "author": "",
+  "author": "PowerCore Team",
   "license": "BSD-2-Clause",
   "dependencies": {
     "express": "~4.13.3"
