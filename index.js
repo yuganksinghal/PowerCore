@@ -1,8 +1,17 @@
 var express = require ('express');
 var app = express();
+var light;
 
 app.get('/', function(req, res) {
-    res.send('HELLO THIS IS POWERCORE!');
+    res.send(JSON.stringify(light));
+});
+
+app.get('/on', function(req, res) {
+    light = 1;
+});
+
+app.get('/off', function(req, res) {
+    light = 0;
 });
 
 var port = 8080;
