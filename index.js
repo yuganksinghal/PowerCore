@@ -8,10 +8,12 @@ app.get('/', function(req, res) {
 
 app.get('/on', function(req, res) {
     light = 1;
+    res.send(200, OK);
 });
 
 app.get('/off', function(req, res) {
     light = 0;
+    res.send(200, OK);
 });
 
 var port = 8080;
