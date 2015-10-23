@@ -1,6 +1,7 @@
 'use strict'
 
-function Outlet(){
+function Outlet(label){
+  this.name = label;
   this.switch = 0;
 }
 Outlet.prototype.turnOn=function(){
