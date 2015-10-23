@@ -1,19 +1,25 @@
 var express = require ('express');
+var outlet = require('./outlet')
 var app = express();
-var light;
+
+var a = new outlet();
 
 app.get('/', function(req, res) {
-    res.send(JSON.stringify(light));
+  res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/status', function(req, res){
+  res.send(JSON.stringify(a));
+})
+
 app.get('/on', function(req, res) {
-    light = 1;
-    res.send(200, OK);
+    a.turnOn();
+    res.sendStatus(200);
 });
 
 app.get('/off', function(req, res) {
-    light = 0;
-    res.send(200, OK);
+    a.turnOff();
+    res.sendStatus(200);
 });
 
 var port = 8080;
