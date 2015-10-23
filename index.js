@@ -25,11 +25,15 @@ app.get('/', function(req, res) {
 
 app.get('/sensorstatus', function(req, res){
   res.send(JSON.stringify(sensors));
-})
+});
 
 app.get('/outletstatus', function(req, res){
   res.send(JSON.stringify(outlets));
-})
+});
+
+app.post('/update', function(req, res){
+  res.send(JSON.stringify(req));
+});
 
 app.get('/on', function(req, res) {
     a.turnOn();
