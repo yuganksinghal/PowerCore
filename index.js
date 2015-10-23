@@ -15,7 +15,7 @@ for (var i = 0; i < 5; i++){
 
 var b = new sensor('temperature');
 sensors.push(b);
-b=new sensor('humidity');
+b = new sensor('humidity');
 sensors.push(b);
 b = new sensor('luminosity');
 sensors.push(b);
@@ -36,7 +36,17 @@ app.get('/outletstatus', function(req, res){
 });
 
 app.post('/update', function(req, res){
-  res.send(JSON.stringify(req));
+  outlets[0].switch=parseInt(req.body.plug1option);
+  outlets[1].switch=parseInt(req.body.plug2option);
+  outlets[2].switch=parseInt(req.body.plug3option);
+  outlets[3].switch=parseInt(req.body.plug4option);
+  outlets[4].switch=parseInt(req.body.plug5option);
+
+  sensors[0].threshold=parseInt(req.body.temperature);
+  sensors[1].threshold=parseInt(req.body.humidity);
+  sensors[2].threshold=parseInt(req.body.luminosity);
+
+  res.send(req.body);
 });
 
 app.get('/on', function(req, res) {
