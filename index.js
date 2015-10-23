@@ -1,8 +1,8 @@
 var express = require ('express');
-var outlet = require('./outlet')
-var sensor = require('./sensor')
+var outlet = require('./outlet');
+var sensor = require('./sensor');
 var app = express();
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 
 var outlets=[];
 var sensors=[];
