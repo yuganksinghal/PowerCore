@@ -2,6 +2,7 @@ var express = require ('express');
 var outlet = require('./outlet')
 var sensor = require('./sensor')
 var app = express();
+var bodyParser = require('body-parser')
 
 var outlets=[];
 var sensors=[];
@@ -18,6 +19,9 @@ b=new sensor('humidity');
 sensors.push(b);
 b = new sensor('luminosity');
 sensors.push(b);
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
