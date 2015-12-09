@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var outlets=[];
 var sensors=[];
 
-for (var i = 0; i < 5; i++){
+for (var i = 1; i <= 5; i++){
   var s = 'plug' + i;
   var a = new outlet(s);
   outlets.push(a)
@@ -47,6 +47,12 @@ app.post('/update', function(req, res){
   sensors[2].threshold=parseInt(req.body.luminosity);
 
   res.send(req.body);
+});
+
+app.post('/outlet', function(req, res){
+  var data = req.body;
+  console.log(data);
+  res.sendStatus(200);
 });
 
 app.get('/on', function(req, res) {
