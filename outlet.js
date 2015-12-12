@@ -3,6 +3,7 @@
 function Outlet(label){
   this.name = label;
   this.switch = 0;
+  this.previousState=null;
 }
 Outlet.prototype.turnOn=function(){
   this.switch=1;

@@ -51,6 +51,7 @@ app.post('/update', function(req, res){
 
 app.post('/outlet', function(req, res){
   var data = req.body;
+  console.log("POST UPDATE");
   console.log(data);
   res.sendStatus(200);
 });
