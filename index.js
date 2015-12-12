@@ -51,7 +51,7 @@ app.post('/update', function(req, res){
 
 app.post('/outlet', function(req, res){
   var data = req.body;
-  console.log(data);
+  console.log(req.body);
   for(var i = 0; i < 5; i++){
     if (outlets[i].name === data.name){
       console.log("In for loop");
