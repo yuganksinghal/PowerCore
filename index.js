@@ -50,12 +50,12 @@ app.post('/update', function(req, res){
 });
 
 app.post('/outlet', function(req, res){
-  var data = JSON.parse(req.body);
+  var data = req.body.keys;
   console.log(data);
   for(var i = 0; i < 5; i++){
-    if (outlets[i].name === data.name){
+    if (outlets[i].name === data[0].name){
       console.log("In for loop");
-      outlets[i].switch = data.switch;
+      outlets[i].switch = data[0].switch;
       res.sendStatus(200);
       return;
     }
