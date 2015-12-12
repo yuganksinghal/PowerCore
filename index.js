@@ -10,7 +10,7 @@ var sensors=[];
 for (var i = 1; i <= 5; i++){
   var s = 'plug' + i;
   var a = new outlet(s);
-  outlets.push(a)
+  outlets[s] = a;
 }
 
 var b = new sensor('temperature');
@@ -51,8 +51,7 @@ app.post('/update', function(req, res){
 
 app.post('/outlet', function(req, res){
   var data = req.body;
-  console.log("POST UPDATE");
-  console.log(data);
+  outlets[body.name] = body.switch;
   res.sendStatus(200);
 });
 
