@@ -10,7 +10,7 @@ var sensors=[];
 for (var i = 1; i <= 5; i++){
   var s = 'plug' + i;
   var a = new outlet(s);
-  outlets.push(s);
+  outlets.push(a);
 }
 
 var b = new sensor('temperature');
