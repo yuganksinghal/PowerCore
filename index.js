@@ -52,8 +52,8 @@ app.post('/update', function(req, res){
 app.post('/outlet', function(req, res){
   var data = req.body;
   outlets.forEach(function(value, index, ar){
-    if(value.name === body.name){
-      value.switch = body.switch;
+    if(value.name === data.name){
+      value.switch = data.switch;
     }
   })
   res.sendStatus(200);
