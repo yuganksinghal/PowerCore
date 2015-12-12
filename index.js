@@ -52,7 +52,7 @@ app.post('/update', function(req, res){
 app.post('/outlet', function(req, res){
   var data = Object.keys(req.body);
   var jdata = JSON.parse(data[0])
-  console.log(data);
+  console.log(jdata);
   for(var i = 0; i < 5; i++){
     if (outlets[i].name === jdata[0].name){
       console.log("In for loop");
