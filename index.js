@@ -51,8 +51,10 @@ app.post('/update', function(req, res){
 
 app.post('/outlet', function(req, res){
   var data = req.body;
+  console.log(data);
   for(var i = 0; i < 5; i++){
     if (outlets[i].name === data.name){
+      console.log("In for loop");
       outlets[i].switch = data.switch;
       res.sendStatus(200);
       return;
