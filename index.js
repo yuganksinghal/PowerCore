@@ -54,9 +54,9 @@ app.post('/outlet', function(req, res){
   var jdata = JSON.parse(data[0])
   console.log(jdata);
   for(var i = 0; i < 5; i++){
-    if (outlets[i].name === jdata[0].name){
+    if (outlets[i].name === jdata.name){
       console.log("In for loop");
-      outlets[i].switch = jdata[0].switch;
+      outlets[i].switch = jdata.switch;
       res.sendStatus(200);
       return;
     }
