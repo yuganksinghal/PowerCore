@@ -1,13 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="/node_modules/material-design-lite/material.min.css">
+  <script src="/node_modules/material-design-lite/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 </head>
+
+<style>
+  .form-control{
+    width:90%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
 <body>
+
   <form method=POST action="./update">
-    Temperature: <input type="text" name="temperature"><br><br>
-    Luminosity: <input type="text" name="luminosity"><br><br>
-    Humidity: <input type="text" name="humidity"><br><br>
-    Plug1: <select name="plug1option">
+    <!-- Temperature: <input type="text" name="temperature"><br><br> -->
+
+    <!-- Numeric Textfield with Floating Label -->
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="temperature" name="temperature">
+    <label class="mdl-textfield__label" for="temperature">Temperature</label>
+    <span class="mdl-textfield__error">Input is not a number!</span>
+  </div>
+  <br>
+
+
+
+    <!-- Luminosity: <input type="text" name="luminosity"><br><br> -->
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="luminosity" name="luminosity">
+    <label class="mdl-textfield__label" for="luminosity">Luminosity</label>
+    <span class="mdl-textfield__error">Input is not a number!</span>
+  </div>
+  <br>
+
+
+    <!-- Humidity: <input type="text" name="humidity"><br><br> -->
+
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="humidity" name="humidity">
+    <label class="mdl-textfield__label" for="humidity">Humidity</label>
+    <span class="mdl-textfield__error">Input is not a number!</span>
+  </div>
+  <br>
+
+
+
+    Plug1: <select name="plug1option" class="form-control">
+      <option value="7"> Temperature_Plus </option>
+      <option value="6"> Temperature_Minus </option>
+      <option value="5"> Luminosity_Plus </option>
+      <option value="4"> Luminosity_Minus </option>
+      <option value="3"> Humidity_Plus </option>
+      <option value="2"> Humidity_Minus </option>
+      <option value="1"> On </option>
+      <option value="0"> Off </option>
+    </select><br><br>
+    Plug2: <select name="plug2option" class="form-control">
       <option value="7"> Temperature_Plus </option>
       <option value="6"> Temperature_Minus </option>
       <option value="5"> Luminosity_Plus </option>
@@ -17,7 +82,7 @@
       <option value="1"> On </option>
       <option value="0"> Off </option>
     </select> <br><br>
-    Plug2: <select name="plug2option">
+    Plug3: <select name="plug3option" class="form-control">
       <option value="7"> Temperature_Plus </option>
       <option value="6"> Temperature_Minus </option>
       <option value="5"> Luminosity_Plus </option>
@@ -27,7 +92,7 @@
       <option value="1"> On </option>
       <option value="0"> Off </option>
     </select> <br><br>
-    Plug3: <select name="plug3option">
+    Plug4: <select name="plug4option" class="form-control">
       <option value="7"> Temperature_Plus </option>
       <option value="6"> Temperature_Minus </option>
       <option value="5"> Luminosity_Plus </option>
@@ -37,7 +102,7 @@
       <option value="1"> On </option>
       <option value="0"> Off </option>
     </select> <br><br>
-    Plug4: <select name="plug4option">
+    Plug5: <select name="plug5option" class="form-control">
       <option value="7"> Temperature_Plus </option>
       <option value="6"> Temperature_Minus </option>
       <option value="5"> Luminosity_Plus </option>
@@ -47,17 +112,8 @@
       <option value="1"> On </option>
       <option value="0"> Off </option>
     </select> <br><br>
-    Plug5: <select name="plug5option">
-      <option value="7"> Temperature_Plus </option>
-      <option value="6"> Temperature_Minus </option>
-      <option value="5"> Luminosity_Plus </option>
-      <option value="4"> Luminosity_Minus </option>
-      <option value="3"> Humidity_Plus </option>
-      <option value="2"> Humidity_Minus </option>
-      <option value="1"> On </option>
-      <option value="0"> Off </option>
-    </select> <br><br>
-    <input type="submit">
+    <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+   
   </form>
 </body>
 </html>

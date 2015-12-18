@@ -22,6 +22,7 @@ sensors.push(b);
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use("/", express.static(__dirname + '/'));
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
@@ -74,7 +75,7 @@ app.get('/off', function(req, res) {
     res.sendStatus(200);
 });
 
-var port = 8080;
+var port = 8081;
 
 var server = app.listen(process.env.PORT || port, function(){
     console.log('Listening on port ' + port);
