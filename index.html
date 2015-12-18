@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -18,16 +20,46 @@
 </head>
 
 <style>
+
+  body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ecf0f1;
+  }
+
   .form-control{
     width:90%;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .mdl-textfield{
+    margin-left: 10px;
+  }
+
+  .formcontrol::before{
+    margin-left: 10px;
   }
 </style>
 <body>
 
-  <form method=POST action="./update">
+
+  <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">PowerCore</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+        
+          <form method=POST action="./update">
     <!-- Temperature: <input type="text" name="temperature"><br><br> -->
 
     <!-- Numeric Textfield with Floating Label -->
@@ -112,8 +144,14 @@
       <option value="1"> On </option>
       <option value="0"> Off </option>
     </select> <br><br>
-    <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
    
   </form>
+
+
+    </div>
+  </main>
+</div>
+
 </body>
 </html>
